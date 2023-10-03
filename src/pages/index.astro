@@ -1,0 +1,44 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets'
+import froggyImage from '../images/froggy.png'
+
+---
+
+<Layout title="frug">
+	<main>
+		<div class="container">
+			<Image src={froggyImage} alt="A bird." width="" height=""/>
+			<div class="glowing-background">
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style lang="scss">
+	img {
+		position: relative;
+		width: 20vw;
+		height: auto;
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-30%, 50%);
+		z-index: 3;
+	}
+	.container {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		overflow: hidden;
+	}
+	.glowing-background {
+		z-index: 1;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background: radial-gradient(circle at 50% 100%, rgb(106, 44, 112) 30%, rgba(184, 59, 94) 60%, rgb(240, 138, 93) 90%, rgb(249, 237, 105) 100%);
+	}
+</style>
